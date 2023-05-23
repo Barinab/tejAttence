@@ -272,7 +272,7 @@ while run:
   
     oMessageTextAP5.draw()
 
-    print(len(stringSETAD))
+    #print(len(stringSETAD))
     
     ###ALLLL
     J_X=500
