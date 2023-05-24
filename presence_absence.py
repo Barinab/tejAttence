@@ -56,7 +56,7 @@ class Button:
                     
                     global p
                     p=0
-                    print(p)
+                    #print(p)
                     '''[stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, 
                      stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell] =ALL()'''
                     #print(stringSETAD)
@@ -249,7 +249,7 @@ while run:
     if p==0:
         [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
         p=1
-        print(stringSETAD,NAME_UK_AIR)
+        #print(stringSETAD,NAME_UK_AIR)
             
    
     PMX=230
