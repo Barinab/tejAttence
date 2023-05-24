@@ -1,4 +1,6 @@
 #hozur ghiab
+from buRef import Button
+import sys
 import contextlib
 with contextlib.redirect_stdout(None):
     import pygame
@@ -12,11 +14,66 @@ import time
 from attencee import ALL
 import arabic_reshaper
 from bidi.algorithm import get_display
+from pygame.locals import *
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+clock = pygame.time.Clock()
+font = pygame.font.SysFont("Arial", 20)
+global p 
+p=0
+global stringSETAD
+global stringAIR
+class Button:
+    """Create a button, then blit the surface in the while loop"""
+
+    def __init__(self, text,  pos, font, bg="black", feedback=""):
+        self.x, self.y = pos
+        self.font = pygame.font.SysFont("Arial", font)
+        if feedback == "":
+            self.feedback = "text"
+        else:
+            self.feedback = feedback
+        self.change_text(text, bg)
+
+    def change_text(self, text, bg="black"):
+        """Change the text whe you click"""
+        self.text = self.font.render(text, 1, pygame.Color("White"))
+        self.size = self.text.get_size()
+        self.surface = pygame.Surface(self.size)
+        self.surface.fill(bg)
+        self.surface.blit(self.text, (0, 0))
+        self.rect = pygame.Rect(self.x, self.y, self.size[0], self.size[1])
+
+    def show(self):
+        screen.blit(button1.surface, (self.x, self.y))
+
+    def click(self, event):
+        x, y = pygame.mouse.get_pos()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if pygame.mouse.get_pressed()[0]:
+                if self.rect.collidepoint(x, y):
+                    self.change_text(self.feedback, bg="blue")
+                    
+                    global p
+                    p=0
+                    print(p)
+                    '''[stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, 
+                     stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell] =ALL()'''
+                    #print(stringSETAD)
+
+
+
+'''def calling_ding():
+    return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
+'''
+        
+
 
 
     
 pygame.init()
 window = pygame.display.set_mode((800, 600))
+
 clock = pygame.time.Clock()
 # 2 - Define constants
 BLACK = (0, 0, 0)
@@ -38,8 +95,6 @@ background = pygame.Surface(window.get_size())
 #schedule.every(1).minutes.do(ADADAYE_MARZA)
 
 o=1
-
-
 
 def TEXT_Manabe():
     ##jolfa
@@ -175,15 +230,28 @@ def TEXT_Manabe():
 #logoIRECT=logoI.get_rect()
 window.blit(logoI, (30,30))
 '''
+
+button1 = Button(
+    "restart",
+    (280, 500),
+    font=50,
+    bg="red",
+    feedback="restart")
 run = True
 pygame.display.set_caption('Tejarat Electronic Arman Monitoring')
+if p==0:
+    
+    [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
+    p=1
 while run:
     clock.tick(30)
     
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-    
+    if p==0:
+        [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
+        p=1
+        print(stringSETAD,NAME_UK_AIR)
+            
+   
     PMX=230
     PMY=180
     pygame.draw.polygon(window,(0,68,255),((20,20),(230,20),(230,180),(20,180)))
@@ -209,7 +277,6 @@ while run:
     
     #[NAME_UK_jolfa, NAME_jolfa]=testding_2py.JOLFA()
     
-    [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
     #print(stringSETAD)
     ##jolfa
     
@@ -285,14 +352,19 @@ while run:
     
     oMessageTextX.draw()
     #oMessageTextY.draw()
-    
-    
-    
+  
+
    
-    
     
     pygame.display.flip()
     #schedule.run_pending()
-    time.sleep(10)
-pygame.quit()
-exit()#hozur ghiab
+    #time.sleep(10)
+    for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                run = False
+                sys.exit()
+            
+            button1.click(event)
+
+            button1.show()

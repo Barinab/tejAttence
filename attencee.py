@@ -68,7 +68,7 @@ def ALL():
 
         tell_norduz = [989030989197, 989148867748,
                    989145729504, 989332404134]
-        esmaye_norduz = ['HasanNezhad', 'SALEHI', 'Aali', 'Alipour']
+        #esmaye_norduz = ['HasanNezhad', 'SALEHI', 'Aali', 'Alipour']
         CORECTDATE = []
 
        
@@ -220,7 +220,7 @@ def ALL():
         
         for X in range(len(tell_SETAD)):
 
-            for J in range(len(NO)):
+            for J in range(len(NO)-1,0,-1):
                 if int(NO[J])== tell_SETAD[X]:
                     if VAZ[J]==1:
                         Setad_hazery.append(last_name[J])
@@ -255,7 +255,8 @@ def ALL():
         return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
 
 
+
 #[stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]=ALL()
     
 
-#print(stringAIR)
+#print(stringSETAD)
