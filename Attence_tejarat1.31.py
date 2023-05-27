@@ -280,7 +280,7 @@ while run:
     #print(stringSETAD)
     ##jolfa
     
-    oMessageText105 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='C:\Windows\Fonts\BNazanin.ttf',value=NAME_UK_jolfa, 
+    oMessageText105 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_jolfa, 
                                     fontSize=S_F, textColor=WHITE)
    
     oMessageText105.draw()
@@ -293,7 +293,7 @@ while run:
     
     #[NAME_UK_norduz, NAME_norduz]=testding_2py.norduz()
 
-    oMessageTextN4 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='C:\Windows\Fonts\BNazanin.ttf',value=NAME_UK_norduz, 
+    oMessageTextN4 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_norduz, 
                                     fontSize=S_F, textColor=WHITE)
     #print(NAME_UK_norduz)
     
@@ -307,7 +307,7 @@ while run:
     
     #[NAME_UK_BILE, NAME_BILE]=testding_2py.BILE()
 
-    oMessageTextB5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='C:\Windows\Fonts\BNazanin.ttf',value=NAME_UK_BILE, 
+    oMessageTextB5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_BILE, 
                                     fontSize=S_F, textColor=WHITE)
   
     oMessageTextB5.draw()
@@ -320,7 +320,7 @@ while run:
     
     #[NAME_UK_AIR, NAME_AIR]=testding_2py.AIR()
 
-    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='C:\Windows\Fonts\BNazanin.ttf',value= NAME_UK_AIR, 
+    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value= NAME_UK_AIR, 
                                     fontSize=S_F, textColor=WHITE)
     
     oMessageTextAP5.draw()
@@ -333,7 +333,7 @@ while run:
    
     #[NAME_UK_AIR, NAME_AIR]=testding_2py.ASTARA()
 
-    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='C:\Windows\Fonts\BNazanin.ttf',value=NAME_UK_ASTARA, 
+    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_ASTARA, 
                                     fontSize=S_F, textColor=WHITE)
     
   
@@ -345,7 +345,7 @@ while run:
     J_X=600
     J_Y=380
     
-    oMessageTextX = pygwidgets.DisplayText(window, (J_X, J_Y),fontName='C:\Windows\Fonts\BNazanin.ttf',value=(stringSETAD), 
+    oMessageTextX = pygwidgets.DisplayText(window, (J_X, J_Y),fontName='BNazanin',value=(stringSETAD), 
                                     fontSize=17, textColor=WHITE)
     #oMessageTextY = pygwidgets.DisplayText(window, (J_X, J_Y+70),stringSETAD, 
      #                               fontSize=S_F, textColor=WHITE)
