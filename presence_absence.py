@@ -232,11 +232,11 @@ window.blit(logoI, (30,30))
 '''
 
 button1 = Button(
-    "restart",
+    "REFRESH",
     (280, 500),
-    font=50,
-    bg="red",
-    feedback="restart")
+    font=30,
+    bg="blue",
+    feedback="REFRESH")
 run = True
 pygame.display.set_caption('Tejarat Electronic Arman Monitoring')
 if p==0:
@@ -342,11 +342,11 @@ while run:
     #print(len(stringSETAD))
     
     ###ALLLL
-    J_X=500
-    J_Y=410
+    J_X=550
+    J_Y=400
     
     oMessageTextX = pygwidgets.DisplayText(window, (J_X, J_Y),fontName='bZb.ttf',value=(stringSETAD), 
-                                    fontSize=19, textColor=WHITE)
+                                    fontSize=17, textColor=WHITE)
     #oMessageTextY = pygwidgets.DisplayText(window, (J_X, J_Y+70),stringSETAD, 
      #                               fontSize=S_F, textColor=WHITE)
     

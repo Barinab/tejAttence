@@ -19,6 +19,8 @@ def ALL():
        # global stringJOLFA, stringJOLFA_FA
 
         [VAZ, NO, last_name, datemarz] = DING()
+        #print(last_name[0])
+        
         jolfa_hazery = []
         jolfa_hazery_FA = []
         jolfa_tell=[]
@@ -35,7 +37,7 @@ def ALL():
 
         for X in range(0,5):
 
-            for J in range(len(NO)-1,0,-1):
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])==tell_jolfa[X]:
                     if VAZ[J]==1:
                         jolfa_hazery.append(last_name[J])
@@ -75,7 +77,7 @@ def ALL():
 
         for X in range(0,4):
 
-            for J in range(len(NO)-1,0,-1):
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])==tell_norduz[X]:
                     if VAZ[J]==1:
                         norduz_hazery.append(last_name[J])
@@ -110,7 +112,7 @@ def ALL():
 
         for X in range(0,4):
 
-            for J in range(len(NO)-1,0,-1):
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])==tell_AIR[X]:
                     if VAZ[J]==1:
                         AIR_hazery.append(last_name[J])
@@ -146,7 +148,7 @@ def ALL():
 
         for X in range(0,2):
 
-            for J in range(len(NO)-1,0,-1):
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])==tell_ASTARA[X]:
                     if VAZ[J]==1:
                         ASTARA_hazery.append(last_name[J])
@@ -183,7 +185,7 @@ def ALL():
         
         for X in range(0,3):
 
-            for J in range(len(NO)-1,0,-1):
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])==tell_BILE[X]:
                     if VAZ[J]==1:
                         BILE_hazery.append(last_name[J])
@@ -217,16 +219,17 @@ def ALL():
 
         CORECTDATE = []
 
-        
         for X in range(len(tell_SETAD)):
-
-            for J in range(len(NO)-1,0,-1):
+   
+            for J in range(len(NO)-1,-1,-1):
                 if int(NO[J])== tell_SETAD[X]:
                     if VAZ[J]==1:
                         Setad_hazery.append(last_name[J])
                         Setad_hazery_FA.append(last_name[J])
                         Setad_tell.append(str(NO[J]))
                     break
+       
+                
         Mylist_SETAD = list(dict.fromkeys(Setad_hazery))
         #stringSETAD = ','.join(Mylist_SETAD)
         #stringSETAD_FA = ','.join(Setad_hazery_FA)
