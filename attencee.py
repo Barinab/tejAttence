@@ -11,7 +11,8 @@ import time
 #import TEDAD_RUZ
 from ding2 import DING
 from datetime import datetime
-from datetime import date
+import arabic_reshaper
+from bidi.algorithm import get_display
 
 def ALL():
     try:
@@ -242,18 +243,22 @@ def ALL():
         return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
 
     except:
-        stringJOLFA = -100
-        stringJOLFA_tell = -100
-        stringNorduz = -100
-        stringnoruz_tell = -100
-        stringAIR = -100
-        stringAIR_tell = -100
-        stringASTARA = -100
-        stringASTARA_tell = -100
-        stringBILE = -100
-        stringbile_tell = -100
-        stringSETAD=-100
-        stringSETAD_tell=-100
+        TEXTERROR="خطا دریافت"
+        reshaped_text = arabic_reshaper.reshape(TEXTERROR)
+        too_fast= (get_display(reshaped_text))
+        
+        stringJOLFA = too_fast
+        stringJOLFA_tell = too_fast
+        stringNorduz = too_fast
+        stringnoruz_tell = too_fast
+        stringAIR = too_fast
+        stringAIR_tell = too_fast
+        stringASTARA = too_fast
+        stringASTARA_tell = too_fast
+        stringBILE = too_fast
+        stringbile_tell = too_fast
+        stringSETAD=too_fast
+        stringSETAD_tell=too_fast
         
         return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
 

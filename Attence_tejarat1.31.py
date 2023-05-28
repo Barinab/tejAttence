@@ -15,6 +15,8 @@ from attencee import ALL
 import arabic_reshaper
 from bidi.algorithm import get_display
 from pygame.locals import *
+import datetime
+global TIME_REF
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
@@ -68,6 +70,10 @@ class Button:
 '''
         
 
+global stringJOLFA
+global stringNorduz
+global stringASTARA
+global stringBILE
 
 
     
@@ -91,8 +97,7 @@ ft_font = pygame.freetype.SysFont('Times New Roman', 20)
 
 background = pygame.Surface(window.get_size())
 
-#schedule.every(1).minutes.do(ty)
-#schedule.every(1).minutes.do(ADADAYE_MARZA)
+
 
 o=1
 
@@ -100,8 +105,7 @@ def TEXT_Manabe():
     ##jolfa
     J_X=30
     J_Y=20
-    fon_S=15
-    
+      
     
     oMessageText1 = pygwidgets.DisplayText(window, (95,J_Y),'Jolfa', 
                                     fontSize=36, textColor=ORANGE)
@@ -239,21 +243,33 @@ button1 = Button(
     feedback="REFRESH")
 run = True
 pygame.display.set_caption('Tejarat Electronic Arman Monitoring')
-if p==0:
+p==0
     
-    [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
-    p=1
+   
 while run:
     clock.tick(30)
-    
+    pygame. draw. polygon(window, (0,0,0), ((20,500),(20,560),(240,560),(240,500)))
+
     if p==0:
         [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
         p=1
+        TIME_REF= datetime.datetime.now()
         #print(stringSETAD,NAME_UK_AIR)
+        secTime=datetime.timedelta(0,10)+datetime.datetime.now()
+
+    
+    if datetime.datetime.now()>secTime:
+        print("good")
+        TIME_REF=datetime.datetime.now()
+        [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
+
+        secTime=datetime.timedelta(0,10)+datetime.datetime.now()
+        
             
    
     PMX=230
     PMY=180
+
     pygame.draw.polygon(window,(0,68,255),((20,20),(230,20),(230,180),(20,180)))
     pygame.draw.polygon(window,(0,68,255),((20+PMX,20+PMY),(230+PMX,20+PMY),(230+PMX,180+PMY),(20+PMX,180+PMY)))
     pygame.draw.polygon(window,(0,68,255),((20,20+PMY),(230,20+PMY),(230,180+PMY),(20,180+PMY)))
@@ -267,6 +283,9 @@ while run:
 
     pygame.draw.polygon(window,(0,68,255),((20+2*PMX,20+PMY),(230+2*PMX,20+PMY),(230+2*PMX,180+PMY),
                                            (20+2*PMX,180+PMY)))
+    
+
+    
     ##window.blit(logoI, (20+PMX+30,180+PMY+40))
 
     TEXT_Manabe()
@@ -280,7 +299,7 @@ while run:
     #print(stringSETAD)
     ##jolfa
     
-    oMessageText105 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_jolfa, 
+    oMessageText105 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazsanin.ttf',value=NAME_UK_jolfa, 
                                     fontSize=S_F, textColor=WHITE)
    
     oMessageText105.draw()
@@ -293,7 +312,7 @@ while run:
     
     #[NAME_UK_norduz, NAME_norduz]=testding_2py.norduz()
 
-    oMessageTextN4 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_norduz, 
+    oMessageTextN4 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazsanin.ttf',value=NAME_UK_norduz, 
                                     fontSize=S_F, textColor=WHITE)
     #print(NAME_UK_norduz)
     
@@ -307,7 +326,7 @@ while run:
     
     #[NAME_UK_BILE, NAME_BILE]=testding_2py.BILE()
 
-    oMessageTextB5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_BILE, 
+    oMessageTextB5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazsanin.ttf',value=NAME_UK_BILE, 
                                     fontSize=S_F, textColor=WHITE)
   
     oMessageTextB5.draw()
@@ -320,7 +339,7 @@ while run:
     
     #[NAME_UK_AIR, NAME_AIR]=testding_2py.AIR()
 
-    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value= NAME_UK_AIR, 
+    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazsanin.ttf',value= NAME_UK_AIR, 
                                     fontSize=S_F, textColor=WHITE)
     
     oMessageTextAP5.draw()
@@ -333,7 +352,7 @@ while run:
    
     #[NAME_UK_AIR, NAME_AIR]=testding_2py.ASTARA()
 
-    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazanin',value=NAME_UK_ASTARA, 
+    oMessageTextAP5 = pygwidgets.DisplayText(window, (J_X-80, J_Y+150),fontName='BNazsanin.ttf',value=NAME_UK_ASTARA, 
                                     fontSize=S_F, textColor=WHITE)
     
   
@@ -345,15 +364,19 @@ while run:
     J_X=600
     J_Y=380
     
-    oMessageTextX = pygwidgets.DisplayText(window, (J_X, J_Y),fontName='BNazanin',value=(stringSETAD), 
-                                    fontSize=17, textColor=WHITE)
+    oMessageTextX = pygwidgets.DisplayText(window, (J_X, J_Y),fontName='BNazsanin.ttf',value=(stringSETAD), 
+                                    fontSize=16, textColor=WHITE)
     #oMessageTextY = pygwidgets.DisplayText(window, (J_X, J_Y+70),stringSETAD, 
      #                               fontSize=S_F, textColor=WHITE)
     
     oMessageTextX.draw()
     #oMessageTextY.draw()
   
-
+    oMessageTextref = pygwidgets.DisplayText(window, (20, J_Y+160),fontName='BNazsanin.ttf',value=TIME_REF, 
+                                    fontSize=15, textColor=WHITE)
+    
+  
+    oMessageTextref.draw()
    
     
     pygame.display.flip()
