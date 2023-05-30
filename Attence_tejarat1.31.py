@@ -33,7 +33,7 @@ class Button:
 
     def __init__(self, text,  pos, font, bg="black", feedback=""):
         self.x, self.y = pos
-        self.font = pygame.font.SysFont("Arial", font)
+        self.font = pygame.font.SysFont("BNazsanin.ttf", font)
         if feedback == "":
             self.feedback = "text"
         else:
@@ -68,7 +68,7 @@ window = pygame.display.set_mode((710, 560))
 
 clock = pygame.time.Clock()
 # 2 - Define constants
-font = pygame.font.SysFont("Bnazanin.ttf", 20)
+font = pygame.font.SysFont("BNazsanin.ttf", 20)
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -77,7 +77,7 @@ ORANGE=(245,110,20)
 p=0
 o=1
 
-ft_font = pygame.freetype.SysFont('Times New Roman', 20)
+ft_font = pygame.freetype.SysFont('BNazsanin.ttf', 20)
 
 background = pygame.Surface(window.get_size())
 
@@ -137,11 +137,11 @@ TEXTref="بارگذاری دوباره"
 reshaped_text = arabic_reshaper.reshape(TEXTref)
 refreshText= (get_display(reshaped_text))
 button1 = Button(
-    refreshText,
+    "restart",
     (280, 500),
-    font=30,
+    font=70,
     bg="blue",
-    feedback=refreshText)
+    feedback="restart")
 pygame.display.set_caption('Tejarat Electronic Arman Monitoring')
 
 def handleError():
