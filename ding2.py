@@ -23,6 +23,7 @@ def DING():
         TP = []
         AT = []
         DT = []
+        
         for i in data:
             last_name.append(i['last_name'])
             NO.append(i['cell_number'])

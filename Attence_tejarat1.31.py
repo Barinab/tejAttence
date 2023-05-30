@@ -145,7 +145,7 @@ button1 = Button(
 pygame.display.set_caption('Tejarat Electronic Arman Monitoring')
 
 def handleError():
-        TIME_REF=datetime.datetime.now()
+        TIME_REF=datetime.datetime.now().replace(microsecond=0)
         
 
                 #TReturn =SE-time.time()
@@ -166,20 +166,20 @@ while run:
         [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
         p=1
        
-        TIME_REF= datetime.datetime.now()
-        secTime=datetime.timedelta(0,300)+datetime.datetime.now()
+        TIME_REF= datetime.datetime.now().replace(microsecond=0)
+        secTime=datetime.timedelta(0,300) + datetime.datetime.now().replace(microsecond=0)
     
 
                     
                     
     
     if datetime.datetime.now()>secTime:
-        TIME_REF=datetime.datetime.now()
+        TIME_REF=datetime.datetime.now().replace(microsecond=0)
         [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell]=ALL()
         
-        secTime=datetime.timedelta(0,300)+datetime.datetime.now()
+        secTime=datetime.timedelta(0,300)+datetime.datetime.now().replace(microsecond=0)
     if NAME_BILE==0:
-            TIME_REF=datetime.datetime.now()
+            TIME_REF=datetime.datetime.now().replace(microsecond=0)
 
            # time.sleep(10)
             [NAME_UK_jolfa, NAME_jolfa,NAME_UK_norduz, NAME_norduz, NAME_UK_AIR, NAME_AIR,NAME_UK_ASTARA, NAME_ASTARA,NAME_UK_BILE, NAME_BILE,stringSETAD,stringSETAD_tell,TIME_REF]=handleError()
