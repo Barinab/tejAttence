@@ -45,7 +45,8 @@ def DING():
             #print(bidi_text)
         return [NO_INT, NO, bidi_text, DT]
     except:
-        print('error')
+        #print('error')
+        pass
 #[NO_INT, NO, last_name, DT]=DING()
 
 #print(NO_INT)
