@@ -243,22 +243,22 @@ def ALL():
         return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
 
     except:
-        TEXTERROR="خطا دریافت"
+        TEXTERROR="منتظر باشید"
         reshaped_text = arabic_reshaper.reshape(TEXTERROR)
         too_fast= (get_display(reshaped_text))
         
-        stringJOLFA = too_fast
-        stringJOLFA_tell = too_fast
-        stringNorduz = too_fast
-        stringnoruz_tell = too_fast
-        stringAIR = too_fast
-        stringAIR_tell = too_fast
-        stringASTARA = too_fast
-        stringASTARA_tell = too_fast
+        stringJOLFA = " "
+        stringJOLFA_tell = " "
+        stringNorduz = " "
+        stringnoruz_tell = " "
+        stringAIR = " "
+        stringAIR_tell = " "
+        stringASTARA = " "
+        stringASTARA_tell = " "
         stringBILE = too_fast
-        stringbile_tell = too_fast
-        stringSETAD=too_fast
-        stringSETAD_tell=too_fast
+        stringbile_tell = 0
+        stringSETAD=" "
+        stringSETAD_tell=" "
         
         return [stringJOLFA, stringJOLFA_tell, stringNorduz, stringnoruz_tell, stringAIR, stringAIR_tell, stringASTARA, stringASTARA_tell, stringBILE, stringbile_tell,stringSETAD,stringSETAD_tell]
 
